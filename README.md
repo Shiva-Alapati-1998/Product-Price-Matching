@@ -100,6 +100,21 @@ posting_id - the ID code for the posting.
 matches - Space delimited list of all posting IDs that match this posting. Posts always self-match. Group sizes were capped at 50, so there's no need to predict more than 50 matches.
 
 
+## Pre-Processing
+There were a couple of image pre-processing techniques experimented with in order to try and
+improve our models performance during testing. Both of these methods incorporated using the HED to produce high detail contours of the images, which was then used to determine which contours contained the most essential details of the image.
+
+Initially, the largest contour based on contour area was chosen as the most relevant area of the image
+to keep. However after further evaluation, it was shown this didn’t perform well in masking off
+enough of the irrelevant features within an image. Therefore a different approach was taken, where
+the smallest-to-largest of the contours generated were kept in the image until the total contour area
+reached that of the total image area. Since the smallest contours in the image can be children of
+surrounding contours when using a contour hierarchy, there will be overlapping contour areas in the
+image. The more complex the image is, the less of the overall image will be preserved an the more
+individual features will be kept, since they will contain more overlapping contour areas. Therefore, a
+total contour area that is equivalent to the image area is different than preserving the entire image.
+This method proved to provide the best results in keeping many of the relevant features from an
+image and masking off some of the irrelevant ones.
 <!-- USAGE EXAMPLES -->
 ## Results
 
@@ -121,7 +136,7 @@ ViT and TF-IDF model ensemble training on the training dataset produced an F1-sc
 | HED contour-masked images and Ensemble of ViT with TF-IDF| Training | 0.537 |
 | Ensemble of ViT with TF-IDF | Training | 0.514 |
 | HED images and Ensemble of ViT with TF-IDF | Training | 0.499 |
-       **Models and corresponding F-1 scores**
+       **Models and corresponding F-1 scores
 
 when evaluated against the unprocessed training images. In contrast, when applying the HED and
 contour-masking image pre-processing to the training images and evaluating those against the
