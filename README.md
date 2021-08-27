@@ -72,30 +72,75 @@ To get a local copy up and running follow these simple example steps.
 
 Kaggle Shopee - Price Match Guarantee Dataset
 
-### Installation
+### Data Description
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+Finding near-duplicates in large datasets is an important problem for many online businesses. In Shopee's case, everyday users can upload their own images and write their own product descriptions, adding an extra layer of challenge. Your task is to identify which products have been posted repeatedly. The differences between related products may be subtle while photos of identical products may be wildly different!
 
+As this is a code competition, only the first few rows/images of the test set are published; the remainder are only available to your notebook when it is submitted. Expect to find roughly 70,000 images in the hidden test set. The few test rows and images that are provided are intended to illustrate the hidden test set format and folder structure.
+
+### Files
+[train/test].csv - the training set metadata. Each row contains the data for a single posting. Multiple postings might have the exact same image ID, but with different titles or vice versa.
+
+posting_id - the ID code for the posting.
+
+image - the image id/md5sum.
+
+image_phash - a perceptual hash of the image.
+
+title - the product description for the posting.
+
+label_group - ID code for all postings that map to the same product. Not provided for the test set.
+
+[train/test]images - the images associated with the postings.
+
+sample_submission.csv - a sample submission file in the correct format.
+
+posting_id - the ID code for the posting.
+
+matches - Space delimited list of all posting IDs that match this posting. Posts always self-match. Group sizes were capped at 50, so there's no need to predict more than 50 matches.
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Results
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+An ensemble model using NFNet for the image embeddings and EffNet-B3 with BERT for the text
+embeddings, achieved an F-1 score of 0.733 when used against the test dataset. This was the best
+score out of all of our models. Whereas an ensemble of ViT for the image embeddings and TF-IDF
+vectorizer for the text embeddings achieved an F1 score of 0.722, this was the second highest score
+achieved. Lastly, the ensemble of EffNet-B3 and BERT for the image embeddings with TF-IDF for
+the text embeddings produced a score of .701 on the test dataset, which was the lowest score among
+the various models ensembled.
+Using the image pre-processing techniques mentioned regarding HED and contour-masking, a better
+F-1 score was achieved when compared to the unprocessed images from the training dataset. The
+ViT and TF-IDF model ensemble training on the training dataset produced an F1-score of 0.514
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+| Architecture  | Dataset |F-1 Score
+| ------------- | ------------- |
+| Ensemble of NFNet with EffNet-B3 and BERT  | Content Cell  |
+| Ensemble of ViT with TF-IDF vectorizer  | Content Cell  |
+| Ensemble of EffNet-B3 and BERT with TF-IDF|
+| HED contour-masked images and Ensemble of ViT|
+with TF-IDF
+
+  F-1 Score
+ Test 0.733
+ Test 0.722
+ Test 0.701
+
+
+Training 0.537
+Ensemble of ViT with TF-IDF Training 0.514
+HED images and Ensemble of ViT with TF-IDF Training 0.499
+Table 1: Models and corresponding F-1 scores
+
+when evaluated against the unprocessed training images. In contrast, when applying the HED and
+contour-masking image pre-processing to the training images and evaluating those against the
+ViT/TF-IDF model, a score of 0.537 was achieved. The images produced from the HED model
+without the contour-masking was also tried against the training images and the ViT/TF-IDF model,
+however this produced a lesser F-1 score of 0.499.
+An additional ensemble of ViT for the image embeddings and BERT for the text embeddings (instead
+of TF-IDF) was attempted, however this model did not perform as well compared to using TF-IDF.
+Therefore, this model was discarded after some initial evaluation.
 
 
 
