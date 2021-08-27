@@ -136,7 +136,7 @@ ViT and TF-IDF model ensemble training on the training dataset produced an F1-sc
 | HED contour-masked images and Ensemble of ViT with TF-IDF| Training | 0.537 |
 | Ensemble of ViT with TF-IDF | Training | 0.514 |
 | HED images and Ensemble of ViT with TF-IDF | Training | 0.499 |
-       **Models and corresponding F-1 scores
+#####Models and corresponding F-1 scores
 
 when evaluated against the unprocessed training images. In contrast, when applying the HED and
 contour-masking image pre-processing to the training images and evaluating those against the
