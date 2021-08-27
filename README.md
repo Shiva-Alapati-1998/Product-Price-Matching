@@ -1,45 +1,6 @@
 # Product-Matching
-Product matching on shopee dataset (Kaggle Competition)
-In the modern era, customers can buy products from hundreds of e-commerce
-websites. However customers find it hard to get the similar items with good quality
-and cheaper price because these items are listed at multiple websites for different
-prices. Leading e-commerce companies are always in search of building robust AI
-technology to make their customers comfortable in searching the products and
-attract the customers to buy their products at rates competitive to sold by other
-retailers in the market.
 
-Here we present deep learning approach based on Holistically-Nested Edge Detec-
-tion (HED), EfficientNet-B3 (EffNet-B3), Bidirectional Encoder Representations
 
-from Transformers (BERT), Normalizer-Free Networks (NFNet), Vision Trans-
-former (ViT), and Term Frequency–Inverse Document Frequency (TF-IDF) to find
-
-images and text embeddings. During model execution for a particular image, we
-use KNN to get the top 50 similar products based on the embeddings which can be
-used to compare the price of a product.
-
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Best-README-Template</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</p>
 
 
 
@@ -74,25 +35,30 @@ used to compare the price of a product.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Product matching on shopee dataset (Kaggle Competition)
+In the modern era, customers can buy products from hundreds of e-commerce
+websites. However customers find it hard to get the similar items with good quality
+and cheaper price because these items are listed at multiple websites for different
+prices. Leading e-commerce companies are always in search of building robust AI
+technology to make their customers comfortable in searching the products and
+attract the customers to buy their products at rates competitive to sold by other
+retailers in the market.
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Here we present deep learning approach based on Holistically-Nested Edge Detec-
+tion (HED), EfficientNet-B3 (EffNet-B3), Bidirectional Encoder Representations
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+from Transformers (BERT), Normalizer-Free Networks (NFNet), Vision Trans-
+former (ViT), and Term Frequency–Inverse Document Frequency (TF-IDF) to find
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+images and text embeddings. During model execution for a particular image, we
+use KNN to get the top 50 similar products based on the embeddings which can be
+used to compare the price of a product.
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
+* Python
+* Pytorch
+* Hugging Face
 
 
 
@@ -104,11 +70,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Kaggle Shopee - Price Match Guarantee Dataset
 
 ### Installation
 
