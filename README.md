@@ -18,12 +18,13 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#data-description">Data Description</a></li>
+    <li><a href="#files">Files</a></li>
+    <li><a href="#Pre-Processing">Pre-Processing</a></li>
+    <li><a href="#Results">Results</a></li>
+    <li><a href="#future-work">Future Work</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
