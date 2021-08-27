@@ -115,22 +115,13 @@ F-1 score was achieved when compared to the unprocessed images from the training
 ViT and TF-IDF model ensemble training on the training dataset produced an F1-score of 0.514
 | Architecture  | Dataset Header | F-1 Score|
 | ------------- | ------------- | ------------- |
-| Ensemble of NFNet with EffNet-B3 and BERT  | Content Cell  | |
-| Ensemble of ViT with TF-IDF vectorizer  | Content Cell  | |
-| Ensemble of EffNet-B3 and BERT with TF-IDF|cc| |
-| HED contour-masked images and Ensemble of ViT with TF-IDF| | |
-
-
-  F-1 Score
- Test 0.733
- Test 0.722
- Test 0.701
-
-
-Training 0.537
-Ensemble of ViT with TF-IDF Training 0.514
-HED images and Ensemble of ViT with TF-IDF Training 0.499
-Table 1: Models and corresponding F-1 scores
+| Ensemble of NFNet with EffNet-B3 and BERT  | Test  | 0.733 |
+| Ensemble of ViT with TF-IDF vectorizer  | Test  | 0.722 |
+| Ensemble of EffNet-B3 and BERT with TF-IDF| Test | 0.701 |
+| HED contour-masked images and Ensemble of ViT with TF-IDF| Training | 0.537 |
+| Ensemble of ViT with TF-IDF | Training | 0.514 |
+| HED images and Ensemble of ViT with TF-IDF | Training | 0.499 |
+       **Models and corresponding F-1 scores**
 
 when evaluated against the unprocessed training images. In contrast, when applying the HED and
 contour-masking image pre-processing to the training images and evaluating those against the
@@ -144,22 +135,20 @@ Therefore, this model was discarded after some initial evaluation.
 
 
 <!-- ROADMAP -->
-## Roadmap
+## Future Work
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+Using a combination of the smallest-to-largest contours in the image in order to mask off
+irrelevant features in the image improved the model performance on training dataset. This was done
+as a pre-processing step to the images fed into the already trained inference model. Future work here
+could include training the models on the pre-processed images in addition to using this method on the
+test images. Based on the improvement observed, this could further improve our models accuracy.
+Unfortunately, some of the models have a large inference time. We look to analyse models with less
+inference time in future work, which would allow them to be used in real-time applications. In order
+to improve our accuracy, we will look into giving more attention to the Recall scoring metric during
+training. This would allow the model to better detect true positives..
 
 
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 
 
@@ -173,7 +162,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Shiva Maruth Alapati - alapati.shiva1998@gmail.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
@@ -181,35 +170,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+* [Kaggle](https://www.kaggle.com/)
+* [Hugging Face](https://huggingface.co/)
 
