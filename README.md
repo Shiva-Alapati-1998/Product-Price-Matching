@@ -113,17 +113,13 @@ the various models ensembled.
 Using the image pre-processing techniques mentioned regarding HED and contour-masking, a better
 F-1 score was achieved when compared to the unprocessed images from the training dataset. The
 ViT and TF-IDF model ensemble training on the training dataset produced an F1-score of 0.514
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Architecture  | Dataset |F-1 Score
-| ------------- | ------------- |
-| Ensemble of NFNet with EffNet-B3 and BERT  | Content Cell  |
-| Ensemble of ViT with TF-IDF vectorizer  | Content Cell  |
-| Ensemble of EffNet-B3 and BERT with TF-IDF|
-| HED contour-masked images and Ensemble of ViT|
-with TF-IDF
+| Architecture  | Dataset Header | F-1 Score|
+| ------------- | ------------- |  |
+| Ensemble of NFNet with EffNet-B3 and BERT  | Content Cell  | |
+| Ensemble of ViT with TF-IDF vectorizer  | Content Cell  | |
+| Ensemble of EffNet-B3 and BERT with TF-IDF|cc| |
+| HED contour-masked images and Ensemble of ViT with TF-IDF| | |
+
 
   F-1 Score
  Test 0.733
